@@ -22,8 +22,11 @@ set(libsystem_sources
 	init.c
 	darling/src/dummy.c
 	CompatibilityHacks.c
+	ImportCompatibility.c
 	chkstk_darwin_stub.S
 )
+
+set_source_files_properties(ImportCompatibility.c PROPERTIES COMPILE_FLAGS "-fblocks")
 
 set_source_files_properties(init.c PROPERTIES
 	COMPILE_FLAGS " -DPRIVATE=1 -fno-stack-protector"
